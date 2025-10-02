@@ -1,65 +1,104 @@
 # Alcohol Consumption & Life Expectancy Regression Analysis (R)
 
-Welcome to the Alcohol-Life Expectancy Regression Analysis project! This repository provides a comprehensive exploration of how alcohol consumption correlates with life expectancy across countries and years, utilizing powerful data science and machine learning techniques in R.
+This project explores the relationship between alcohol consumption and life expectancy across countries using regression analysis in R. It demonstrates both simple linear and non-linear regression models, provides a thorough correlation analysis, and visualizes the results with high-quality plots.
 
-## 📊 Project Overview
+## Project Overview
 
-The project investigates the relationship between alcohol consumption and life expectancy using global health data. It applies both **linear** and **non-linear regression models** to uncover insights and trends, and includes detailed visualizations and code for reproducibility.
+- **Goal:** Investigate how alcohol consumption impacts life expectancy globally.
+- **Dataset:** [Life Expectancy Data.csv](https://github.com/AdityaX0820/Alcohol-Life-Expectancy-Regression-Analysis-R/blob/main/Life%20Expectancy%20Data.csv)
+- **Methodology:** 
+  - Data cleaning and preprocessing
+  - Exploratory data analysis (EDA)
+  - Manual and in-built correlation calculation
+  - Regression modeling (both simple linear and polynomial regression)
+  - Model evaluation (RMSE, R², correlation)
+  - High-quality visualizations
 
-### Key Features
+## Files
 
-- **Data Cleaning & Preparation:** Handles missing values and selects relevant features for model building.
-- **Exploratory Data Analysis:** Summarizes and visualizes distributions and relationships in the data.
-- **Correlation Analysis:** Computes correlation coefficients both manually and using R's built-in functions.
-- **Regression Modeling:**
-  - **Simple Linear Regression:** Examines the direct relationship between alcohol and life expectancy.
-  - **Non-Linear Regression:** Models more complex patterns using polynomial regression.
-- **Model Evaluation:** Calculates R-squared, RMSE, and other metrics to assess model performance.
-- **Interactive & Publication-Ready Plots:** Uses `ggplot2` and `GGally` for beautiful, informative graphics.
+- `Life Expectancy Data.csv`  
+  Contains country-wise data including alcohol consumption, life expectancy, mortality, and other health indicators.
 
----
+- `Project_Code.R`  
+  Main R script for the analysis. Includes data cleaning, correlation analysis, regression modeling, and visualization steps.
 
+- `Final Project Report (1).pdf`  
+  Detailed report with background, methodology, results, and interpretations.
 
+## How to Run
 
-## 🚀 Getting Started
+1. **Install Dependencies:**  
+   The following R packages are required:
+   - `ggplot2`
+   - `tidyverse`
+   - `dplyr`
+   - `GGally`
+   - `caTools`
+   - `MLmetrics`
+   - `caret`
+   - *(Optional)* `plotly` for interactive plots
 
-### 1. Clone the Repository
+   Uncomment and run the install lines in `Project_Code.R` if needed.
 
-```bash
-git clone https://github.com/AdityaX0820/Alcohol-Life-Expectancy-Regression-Analysis-R.git
-cd Alcohol-Life-Expectancy-Regression-Analysis-R
-```
+2. **Load the Data:**  
+   When prompted, select `Life Expectancy Data.csv` as the input file.
 
-### 2. Install R Dependencies
+3. **Run Analysis:**  
+   Execute `Project_Code.R` in RStudio or your preferred R environment. The script will:
+   - Clean and preprocess the data
+   - Calculate correlations manually and with built-in functions
+   - Perform regression analyses
+   - Output evaluation metrics
+   - Generate plots
 
-Open R or RStudio and ensure these packages are installed:
+## Key Analytical Steps
 
-```r
-install.packages(c("ggplot2", "tidyverse", "dplyr", "GGally", "caTools", "MLmetrics", "caret"))
-# Optional for interactive plots:
-# install.packages("plotly")
-```
+### 1. Data Cleaning
 
-### 3. Run the Analysis
+- Removes missing values ensuring robust analysis.
+- Selects relevant features: `Life.expectancy` and `Alcohol`.
 
-- Open `Project_Code.R` in RStudio.
-- When prompted, select `Life Expectancy Data.csv` as your dataset file.
-- Execute the code step-by-step or run all for a complete analysis.
+### 2. Correlation Analysis
 
----
+- **Manual Calculation:**  
+  Direct computation of the correlation coefficient between alcohol consumption and life expectancy.
+- **Built-in Calculation:**  
+  Uses `GGally::ggcorr` for correlation matrix visualization.
 
-## 📈 Example Outputs
+### 3. Regression Modeling
 
-- **Correlation Heatmaps:** Visualize how alcohol, life expectancy, and other indicators relate.
-- **Regression Plots:** See best-fit lines and curves showing predictive relationships.
-- **Performance Metrics:** Compare linear vs. non-linear model accuracy.
+#### Simple Linear Regression
 
+- Manual computation of regression coefficients (`b0`, `b1`).
+- Visualizes the regression line and scatter plot.
+- Evaluates model performance with R² and RMSE.
 
----
+#### Polynomial Regression (Non-Linear)
 
-## 📖 Documentation
+- Fits a 4th-degree polynomial using `lm()` and `poly()`.
+- Compares model performance to linear regression.
+- Visualizes non-linear fit.
 
-- **Final Project Report:** See [`Final Project Report (1).pdf`](./Final%20Project%20Report%20(1).pdf) for a thorough explanation of methods, results, and conclusions.
-- **Code Comments:** `Project_Code.R` contains detailed comments and explanations for each step.
+### 4. Model Evaluation
 
----
+- **RMSE:** Root Mean Squared Error
+- **R²:** Coefficient of determination
+- **Manual and Built-in metrics:** Ensures result reliability
+
+### 5. Visualization
+
+- High-quality plots for both regression fits.
+- Correlation heatmap for feature relationships.
+
+## Results
+
+- **Correlation:** Quantifies the relationship between alcohol consumption and life expectancy.
+- **Regression Models:** Show how alcohol consumption can be used to predict life expectancy, with non-linear models often performing better.
+- **Insights:** Helps inform public health policy and awareness about alcohol's impact on longevity.
+
+## Sample Output
+
+- **Correlation Coefficient**
+- **Regression Equation & Visualization**
+- **R² and RMSE for model comparison**
+
